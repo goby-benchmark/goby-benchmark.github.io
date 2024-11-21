@@ -154,26 +154,42 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Paper Abstract</h2>
+        <h2 class="title is-3">Overview</h2>
         <div class="content has-text-justified">
           <p>
-            Leading large language models (LLMs) are trained on public data.
-            However, the majority of the world’s data is dark data not pub-
-            licly accessible, mainly in the form of private organizational data
-            or enterprise data. We show that the performance of LLM-based
-            methods seriously degrades when tested on real-world enterprise
-            datasets. Current benchmarks, based on public data, overestimate
-            the performance of LLMs. We release a benchmark of enterprise
-            data, the Goby benchmark, to the scientific community to advance
-            discovery in the area of enterprise data management. Based on
-            our experience with this enterprise benchmark, we propose tech-
-            niques to uplift the performance of LLMs on this more challenging
-            data distribution: these are (1) hierarchical annotation (2) runtime
-            class-learning and (3) ontology synthesis. We show that one these
-            techniques are deployed, performance on enterprise data is on par
-            with public data.
+            <strong>What is GOBY?</strong><br>
+            GOBY is a benchmark dataset designed for evaluating data integration techniques specifically for enterprise data.
+            It was derived from a real-world production workload in the event promotion and marketing domain, compiled around 2017.
+            Unlike public benchmarks, GOBY focuses on private datasets, making it more representative of enterprise challenges.
+          </p>
+          <p>
+            <strong>Where was it collected?</strong><br>
+            The data was collected over several years using over 1,000 wrappers developed by professionals.
+            These wrappers converted web pages and APIs into relational tables, creating a rich dataset.
+          </p>
+          <p>
+            <strong>What does it represent?</strong><br>
+            GOBY represents over 4 million rows of data corresponding to events.
+            It includes detailed semantic labels such as event locations, organizers, and other metadata relevant to the domain.
+            It highlights the structural and semantic complexity often found in enterprise datasets.
+          </p>
+          <p>
+            <strong>What does it contain?</strong><br>
+            - <strong>Source Tables</strong>: Nearly 1,200 source tables, each generated from a wrapper.<br>
+            - <strong>Semantic Types</strong>: A hierarchy of semantic types developed by domain experts.<br>
+            - <strong>Universal Schema</strong>: A unified schema combining all source tables.<br>
+            - <strong>Statistics:</strong><br>
+            &nbsp;&nbsp;&nbsp;- <strong>4.04 million rows</strong><br>
+            &nbsp;&nbsp;&nbsp;- <strong>23,203 columns</strong><br>
+            &nbsp;&nbsp;&nbsp;- <strong>Average 3,405 rows per table</strong><br>
+            &nbsp;&nbsp;&nbsp;- <strong>Average 20 columns per table</strong>
+          </p>
+          <p>
+            GOBY is semantically richer and structurally more complex than typical public benchmarks, such as VizNet or T2Dv2,
+            making it well-suited for enterprise data integration tasks.
           </p>
         </div>
+
       </div>
     </div>
 </section>
@@ -182,20 +198,8 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Dataset Overview</h2>
-        <div class="content has-text-justified">
-          <p>
-            The <strong>GOBY Benchmark Dataset</strong> is designed to aid in evaluating data integration methods on structured enterprise data. This dataset includes categories, entities, and results derived from various data sources, represented in a unified schema. Key components include:
-          </p>
-          <ul>
-            <li><strong>Tags</strong>: Attributes within the unified schema.</li>
-            <li><strong>Results</strong>: Records sourced from wrappers, often web scrapers targeting specific sites.</li>
-            <li><strong>Entities</strong>: Records from original data sources, represented with "tags" that correspond to unified attributes.</li>
-            <li><strong>Wrappers</strong>: Data sources, typically web scrapers generating structured output.</li>
-          </ul>
-        </div>
 
-        <h2 class="title is-3">Contents of Goby</h2>
+        <h2 class="title is-3">Filestructure of Goby</h2>
         <div class="content has-text-justified">
           <p>
             The primary data archive, <code>goby.tar.gz</code>, contains the following key directories:
@@ -217,41 +221,27 @@
             To access the GOBY dataset:
           </p>
           <ol>
-            <li>Download the <code>goby.zip</code> file from the repository (link forthcoming).</li>
-            <li>Extract it using a tool like <code>unzip -P your_password goby.zip -d /path/to/extract/</code>.</li>
+            <li>Download the <code>goby.zip</code> file with the button below using the password:
+            <pre style="display: inline; padding: 5px 10px; border-radius: 4px; border: 1px solid #ccc; background-color: #f9f9f9; width: auto;">GOBY2025</pre></li>
+            <br>
+            <div style="text-align: center;">
+                <a href="https://www.dropbox.com/scl/fi/87d1joafpx4s6ki2w99e1/GOBY.zip?rlkey=3u65pbneul3vg3oi4qn0ynw4v&st=hv1jctq9&dl=0" download class="button is-normal is-rounded is-dark">
+            <span class="icon">
+                <i class="fas fa-file-archive"></i>
+            </span>
+                  <span>Download ZIP</span>
+                </a>
+              </div>
+            <br>
+            <li>Extract the zip-file via the file explorer or in the terminal using a command like <code>unzip -P your_password goby.zip -d /path/to/extract/</code>.</li>
           </ol>
         </div>
 
-        <h2 class="title is-3">Usage Instructions</h2>
+        <h2 class="title is-3">Contact</h2>
         <div class="content has-text-justified">
           <p>
-            Once downloaded, use the following steps to explore and integrate the dataset:
+            Your support in improving this dataset is greatly appreciated! If you have any questions or feedback, please send an email to <a href="mailto:kayali@cs.washington.edu">Moe Kayali</a>.
           </p>
-          <ol>
-            <li><strong>Explore the Data Structure</strong>: Familiarize yourself with the files within the <code>dump/</code> directory.</li>
-            <li><strong>Run Data Integration Tests</strong>: Use the provided scripts to test your integration methods against the dataset.</li>
-          </ol>
-        </div>
-
-        <h2 class="title is-3">Download the Goby Benchmark</h2>
-        <div class="content has-text-justified">
-          <p>
-            The benchmark mentioned in this abstract can be downloaded with the download button below using the password:
-          </p>
-        </div>
-        <div style="text-align: center;">
-
-          <pre style="display: inline-block; padding: 5px 10px; border-radius: 4px; border: 1px solid #ccc; background-color: #f9f9f9; width: auto;">GOBY2025</pre>
-
-          <br>
-          <br>
-          <a href="https://www.dropbox.com/scl/fi/87d1joafpx4s6ki2w99e1/GOBY.zip?rlkey=3u65pbneul3vg3oi4qn0ynw4v&st=hv1jctq9&dl=0" download class="button is-normal is-rounded is-dark">
-          <span class="icon">
-              <i class="fas fa-file-archive"></i>
-          </span>
-            <span>Download ZIP</span>
-          </a>
-        </div>
 
 
       </div>
